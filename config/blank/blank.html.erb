@@ -23,7 +23,7 @@
 <div id='navwrap'>
 <div id='nav'>
     <p>
-      Last Update
+      Letzte Aktualisierung
     </p>
     <p class='small'>
       <% if site.fetched %>
@@ -31,7 +31,7 @@
       <% end %>
     </p>
 
-    <p>Subscriptions</p>
+    <p>Quellen</p>
     <ul class='subscriptions small' >
      <% site.feeds.each do |feed| %>
       <li>
@@ -44,13 +44,20 @@
     <p>Planetarium</p>
     <ul class='planetarium small'>
       <li><a href='http://plutolive.herokuapp.com'>Planet Ruby</a></li>
-      <li><a href='http://viennarb.herokuapp.com'>Planet vienna.rb</a></li>
+      <li><a href="https://planet.archlinux.de">Planet ArchLinux</a></li>
     </ul>
 
+    <p>Eintragen</p>
+    <p class="small">
+      Wenn auch dein Blog hier erscheinen soll, melde dich
+      bei <a href="mailto:quintus@quintilianus.eu">quintus@quintilianus.eu</a>
+      oder stelle ein PR gegen <a href="https://github.com/Quintus/rubyplanet">das Repository</a>.
+    </p>
+
     <p>Meta</p>
-    <p class='small'>Powered by <a href='https://github.com/feedreader'>Pluto</a>; 
-       Questions? Comments?
-      Send them along to the <a href='http://groups.google.com/group/feedreader'>forum/mailing list</a>. Thanks!
+    <p class='small'>
+      Erstellt mit <a href="https://www.ruby-lang.org">Ruby</a>,
+      <a href='https://github.com/feedreader'>Pluto</a> und Cron.
     </p>
 </div>
 </div>
@@ -63,11 +70,11 @@
    <img src='i/view-standard.png' id='show-fulltext'    title='Show Full Text' width='24' height='24'>
   </div>
   <div style='width: 100%; text-align: right;'>
-    Style |
+    Stil |
       <%= link_to 'Standard', "#{site.key}.html" %> &bull;
-      <%= link_to 'Cards', "#{site.key}.cards.html" %>
+      <%= link_to 'Kartiert', "#{site.key}.cards.html" %>
   </div>
-</div>  
+</div>
 
 
 <h1><%= site.title %></h1>
