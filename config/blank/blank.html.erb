@@ -1,4 +1,14 @@
 <!DOCTYPE html>
+<%# Witness the magic of the entirely undocumented use of the i18n
+  # gem without rails. You will never find this out by looking at
+  # its nonexisting documentation. %>
+<%
+I18n.load_path = ["config/de.yml"]
+I18n.backend.load_translations
+I18n.default_locale = :de
+I18n.locale = :de
+%>
+
 <html>
 <head>
   <meta charset='utf-8'>
@@ -27,7 +37,7 @@
     </p>
     <p class='small'>
       <% if site.fetched %>
-        <%= site.fetched.strftime('%A, %d. %B %Y %H:%M') %>
+        <%= I18n.l site.fetched.strftime %>
       <% end %>
     </p>
 
@@ -88,7 +98,7 @@
 
 <% if new_date %>
  <h2 class='new-date'>
-  <%= item.published.strftime('%A, %d. %B %Y') %>
+  <%= I18n.l item.published.to_date, :format => :long %>
  </h2>
 <% else %>
   <hr class='item-seperator'>
