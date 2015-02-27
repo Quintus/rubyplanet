@@ -36,9 +36,7 @@ I18n.locale = :de
       Letzte Aktualisierung
     </p>
     <p class='small'>
-      <% if site.fetched %>
-        <%= I18n.l site.fetched.strftime %>
-      <% end %>
+      <%= I18n.l Time.now %>
     </p>
 
     <p>Quellen</p>
